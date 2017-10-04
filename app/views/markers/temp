@@ -1,0 +1,3 @@
+<a href='#', onclick="event.preventDefault(); return false;",  class="load-location" data-location_from_latitude="<%= route[:from_latitude] %>" data-location_from_longitude="<%= route[:from_longitude] %>" data-location_to_latitude="<%= route[:to_latitude] %>" data-location_to_longitude="<%= route[:to_longitude]%>" data-members="<%= route.users.pluck(:email) %>">
+		  <i class="glyphicon glyphicon-asterisk"></i>
+	  </a>

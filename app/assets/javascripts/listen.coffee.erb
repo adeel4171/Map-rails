@@ -1,0 +1,14 @@
+$(document).on 'click', '.load-location', ->
+  fetchLocations $(this).data('location_from_latitude'), $(this).data('location_from_longitude'), $(this).data('location_to_latitude'), $(this).data('location_to_longitude'), $(this).data('members')
+  return
+
+$(document).on 'click', '.email-template', ->
+	alert('hello');
+	return
+
+$(document).on 'click', '#submit-modal', ->
+	alert($('#datetimepicker1').val());
+	$('#set-date').val($('#datetimepicker1').val());
+	alert($('#set-date').val());
+	$("#myModal .close").click();
+	return

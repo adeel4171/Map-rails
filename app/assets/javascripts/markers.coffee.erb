@@ -1,0 +1,174 @@
+geocoder = ''
+map = ''
+marker = ''
+flag = 0
+positionArray = []
+directionsDisplay = ''
+directionsService = new (google.maps.DirectionsService)
+
+gmaps_init = ->
+
+
+  latlng = new (google.maps.LatLng)(51.751724, -1.255284)
+  options = 
+    zoom: 2
+    center: latlng
+    gestureHandling: 'greedy'
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  map = new (google.maps.Map)(document.getElementById('gmaps-canvas'), options)
+  directionsDisplay = new (google.maps.DirectionsRenderer)
+    draggable: true,
+  directionsDisplay.setMap map
+  geocoder = new (google.maps.Geocoder)
+  $('#gmaps-error').hide()
+  return
+  
+setFormValues = (from_latitude, from_longitude, to_latitude, to_longitude, start_address, end_address) ->
+  $('#location-latitude1').val(from_latitude)
+  $('#location-longitude1').val(from_longitude)
+  $('#location-latitude2').val(to_latitude)
+  $('#location-longitude2').val(to_longitude)
+  $('#location-from').val(start_address)
+  $('#location-to').val(end_address)
+
+calcRoute = (from_latitude, from_longitude, to_latitude, to_longitude) ->
+
+  start = new (google.maps.LatLng)(from_latitude, from_longitude)
+  end = new (google.maps.LatLng)(to_latitude, to_longitude)
+  request = 
+    origin: start
+    destination: end
+    travelMode: google.maps.TravelMode.DRIVING
+  directionsService.route request, (response, status) ->
+    if status == google.maps.DirectionsStatus.OK
+
+      directionsDisplay.setDirections response
+      directionsDisplay.setMap map
+      google.maps.event.addListener directionsDisplay, 'directions_changed', -> 
+            
+        directions = directionsDisplay.getDirections()
+        location_from_LatLong = convertLocationToLatLong(directions.routes[0].legs[0].start_location.toUrlValue())
+        location_to_LatLong = convertLocationToLatLong(directions.routes[0].legs[0].end_location.toUrlValue())
+        start_address = directions.routes[0].legs[0].start_address
+        end_address = directions.routes[0].legs[0].end_address
+        setFormValues(location_from_LatLong[0], location_from_LatLong[1] , location_to_LatLong[0], location_to_LatLong[1], start_address, end_address)
+      
+      location_from_LatLong = convertLocationToLatLong(response.routes[0].legs[0].start_location.toUrlValue())
+      location_to_LatLong   = convertLocationToLatLong(response.routes[0].legs[0].end_location.toUrlValue())
+      start_address         = response.routes[0].legs[0].start_address
+      end_address           = response.routes[0].legs[0].end_address
+      setFormValues(location_from_LatLong[0], location_from_LatLong[1] , location_to_LatLong[0], location_to_LatLong[1], start_address, end_address)
+
+      return
+    else
+      alert 'Directions Request from ' + start.toUrlValue(6) + ' to ' + end.toUrlValue(6) + ' failed: ' + status
+    return
+  return
+
+@fetchLocations = (from_laitude, from_longitude, to_latitude, to_longitude, members_list) ->
+  calcRoute from_laitude, from_longitude, to_latitude, to_longitude
+  $('.members-list').empty()
+  $('.members-list').append(members_list.join('\n'))
+  return
+
+convertLocationToLatLong = (location) ->
+  `var location`
+  location = location.split(',').map((item) ->
+    parseFloat item
+  )
+  location
+
+update_map = (geometry) ->
+
+  map.fitBounds geometry.viewport
+  if flag == 0
+    positionArray[0] = geometry.location
+  else
+    positionArray[1] = geometry.location
+
+  if positionArray.length > 1
+    location_from_LatLong = convertLocationToLatLong(positionArray[0].toUrlValue())
+    location_to_LatLong = convertLocationToLatLong(positionArray[1].toUrlValue())
+    $('#location-latitude1').val(location_from_LatLong[0])
+    $('#location-longitude1').val(location_from_LatLong[1])
+    $('#location-latitude2').val(location_to_LatLong[0])
+    $('#location-longitude2').val(location_to_LatLong[1])
+    $('#location-from').val($('#gmaps-input-address-from').val())
+    $('#location-to').val($('#gmaps-input-address-to').val())
+    calcRoute location_from_LatLong[0], location_from_LatLong[1], location_to_LatLong[0], location_to_LatLong[1]
+  return
+
+update_ui = (address, latLng) ->
+
+  if flag == 0
+    $('#gmaps-input-address-from').autocomplete 'close'
+    $('#gmaps-input-address-from').val address
+  else
+    $('#gmaps-input-address-to').autocomplete 'close'
+    $('#gmaps-input-address-to').val address
+  return
+
+geocode_lookup = (type, value, update) ->
+
+  update = if typeof update != 'undefined' then update else false
+  request = {}
+  request[type] = value
+  geocoder.geocode request, (results, status) ->
+    $('#gmaps-error').html ''
+    $('#gmaps-error').hide()
+    if status == google.maps.GeocoderStatus.OK
+      if results[0]
+        update_ui results[0].formatted_address, results[0].geometry.location
+        if update
+          update_map results[0].geometry
+      else
+        $('#gmaps-error').html 'Sorry, something went wrong. Try again!'
+        $('#gmaps-error').show()
+    else
+      if type == 'address'
+        $('#gmaps-error').html 'Sorry! We couldn\'t find ' + value + '. Try a different search term, or click the map.'
+        $('#gmaps-error').show()
+      else
+        $('#gmaps-error').html 'Woah... that\'s pretty remote! You\'re going to have to manually enter a place name.'
+        $('#gmaps-error').show()
+        update_ui '', value
+    return
+  return
+
+autocomplete_init = ->
+
+  $('#gmaps-input-address-from, #gmaps-input-address-to').autocomplete
+    source: (request, response) ->
+      geocoder.geocode { 'address': request.term }, (results, status) ->
+        response $.map(results, (item) ->
+          {
+            label: item.formatted_address
+            value: item.formatted_address
+            geocode: item
+          }
+        )
+        return
+      return
+    select: (event, ui) ->
+      update_ui ui.item.value, ui.item.geocode.geometry.location
+      update_map ui.item.geocode.geometry
+      return
+
+  $('#gmaps-input-address-from, #gmaps-input-address-to').bind 'keydown', (event) ->
+
+    flag = 0
+    if $(this).context.id == 'gmaps-input-address-to'
+      flag = 1
+    if event.keyCode == 13
+      geocode_lookup 'address', $('#gmaps-input-address-from').val(), true
+      $('#gmaps-input-address-from').autocomplete 'disable'
+    else
+      $('#gmaps-input-address-from').autocomplete 'enable'
+    return
+  return
+
+$(document).ready ->
+  if $('#gmaps-canvas').length
+    gmaps_init()
+    autocomplete_init()
+  return

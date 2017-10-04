@@ -1,0 +1,109 @@
+// Place all the styles related to the markers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map {
+  height: 700px;
+  width: 50%;
+  margin-top: -5px;
+}
+.button-designing{
+	background-color: black;
+	margin: 10px;
+	float: right;
+}
+
+.designing{
+	display: inline;
+}
+.location-title{
+	display: inline;
+}
+.text-field-location{
+	width: 350px;
+  	height: 40px;
+  	margin-left: 20px;
+  	margin-right: 60px;
+}
+.text-field-map{
+	display: inline;
+}
+
+#gmaps-canvas{
+
+	width: 96%;
+	max-height: 600px;
+	margin-left: 4%;
+	margin-top: 10%;	
+
+}
+
+.load-location{
+}
+
+.location-information{
+	width: 62%;
+	float: left;
+	margin-left: 15%;
+	margin-top: 0.5%;
+	margin-bottom: 1%;
+}
+
+.left{
+
+	margin-left: 1%;
+	float: left;
+	width: 68%;
+
+}
+
+.right-to{
+	width: 30%;
+	float: right;
+}
+.fetch-locations{}
+
+.delete-button{
+}
+.position-align{
+	float: right;
+}
+.glyphicon {
+    font-size: 20px;
+    margin-right: 10%;
+}
+.table{
+	margin-top: 7%;
+}
+.form-inline
+{
+	margin-top: 3%;
+}
+.table-div
+{
+	
+}
+.map-loading
+{
+}
+	
+.row-designing{
+	margin-top: 2%;
+}
+.create-trip-button{
+	margin-top: 2%;
+}
+.link-designing:hover {
+  background-color: inherit;
+}
+.link-designing:visited{
+  color: #428bca;
+}
+.text-field-design{
+  width: 90%;
+  margin-bottom: 3%;
+}
+.text-area-design{
+  height: 200px;
+  width: 65%;
+}

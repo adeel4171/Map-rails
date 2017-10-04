@@ -1,0 +1,23 @@
+<tr class="row" id=<%= route.id %> >
+	<td class="col-md-4"><%= route.location_from %> </td>
+	<td class="col-md-4"><%= route.location_to %></td>
+	<td class="col-md-4">
+    <a href='#', onclick="event.preventDefault(); return false;",  class="load-location link-designing" data-location_from_latitude="<%= route[:from_latitude] %>" data-location_from_longitude="<%= route[:from_longitude] %>" data-location_to_latitude="<%= route[:to_latitude] %>" data-location_to_longitude="<%= route[:to_longitude]%>" data-members="<%= route.users.pluck(:email) %>">
+		  <i class="glyphicon glyphicon-asterisk"></i>
+	  </a>
+    <%= link_to  marker_path(route), class:'link-designing', method: :delete, remote: :true do %>
+      <i class="glyphicon glyphicon-minus"></i>
+    <% end %>
+    <%= link_to 'Invite', invite_marker_path(route.id), class:"link-designing", remote:true %>
+  </td>
+</tr>
+
+
+<!--div class="location-information" id=< route[:id] %> >
+	< route[:location_from] %>
+	< route[:location_to] %>
+	<div class="position-align">
+		<button class="load-location btn btn-primary" data-location_from_latitude="< route[:from_latitude] %>" data-location_from_longitude="< route[:from_longitude] %>" data-location_to_latitude="< route[:to_latitude] %>" data-location_to_longitude="< route[:to_longitude]%>" >Load Location</button>
+		< link_to  "Delete Location", marker_path(route), method: :delete, remote: :true, class: "btn btn-primary" %>
+	</div>
+</div-->

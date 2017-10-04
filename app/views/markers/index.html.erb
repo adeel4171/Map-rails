@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+  <meta charset='utf-8'>
+  <title>rjshade/gmaps-autocomplete @ GitHub</title>
+  <title>Google Maps and jqueryUI</title>      
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+      <%= form_for(@marker, remote: true) do |f| %>
+        <%= f.hidden_field :from_latitude, id:"location-latitude1" %>
+        <%= f.hidden_field :from_longitude, id:"location-longitude1" %>
+        <%= f.hidden_field :to_latitude, id:"location-latitude2" %>
+        <%= f.hidden_field :to_longitude, id:"location-longitude2" %>
+        <%= f.hidden_field :location_from, id:"location-from" %>
+        <%= f.hidden_field :location_to, id:"location-to" %>
+        <div class="row row-designing">
+          <%= f.hidden_field :departure_date, id: 'set-date' %>
+          <!--div class="col-md-2">
+            Departure Date:
+          </div>
+          <div class="col-md-3">
+            < f.text_field :departure_date, id:"datetimepicker1" %>
+          </div-->
+          <div class="col-md-2">
+            Begin At:
+          </div>
+          <div class="col-md-3">
+            <%= f.time_select :begin_at, :default => Time.now  %>
+          </div>
+        </div>
+        <div class="row row-designing">
+          <div class="col-md-2">
+            End At:
+          </div>
+          <div class="col-md-3">
+            <%= f.time_select :end_at, :default => Time.now %>
+          </div>
+          <div class="col-md-3 col-md-offset-2">
+            <%= f.submit 'Add Trip' , class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+
+
+
+
+
+      <div class="modal-popup">
+        <div class="modal" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add trip</h4>
+              </div>
+              <div class="modal-body">
+              	<div class="form-group">
+	              	<div class="row">
+							  		<div class="col-md-2">
+							  				Starting From:
+					  				</div>
+					  				<div class="col-md-3">
+										  	<input id='gmaps-input-address-from' class='form-control' placeholder='Start typing a place name...' type='text' />
+								  	</div>
+									  <div class="col-md-2">
+										  	Destination:
+								  	</div>
+								  	<div class="col-md-3">
+								      	<input id='gmaps-input-address-to' class='form-control' placeholder='Start typing a place name...' type='text' />
+									  </div>
+								  </div>
+
+                  <input type="text", id="datetimepicker1" />
+                  <button type="button", id="submit-modal" > Submit </button>
+								 
+                  
+                </div>
+              </div>
+              <!--div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div-->
+            </div>
+          </div>
+        </div>
+      </div>
+    	<div class="row">
+    		<div class="col-md-8">
+	    		<h2> Trips History </h2>
+    		</div>
+    		<div class="col-md-4 create-trip-button">
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create trip</button>
+          <!--= link_to 'Add Trip', '#myModal',  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  % -->
+    		</div>
+    	</div>
+    	<div class="main-div">
+    	<div class="row">
+    		<div class="col-md-7">
+    			<div class="table-div">
+			    <table class="table table-bordered">
+			    	<thead>
+					      <tr class="row">
+					        <th class="col-md-4">Starting Location</th>
+					        <th class="col-md-4">Ending Location</th>
+					        <th class="col-md-4">Actions</th>
+					      </tr>
+				    </thead>
+				    <tbody class="append-row">
+			    		<% @markers.each do |location| %>
+	      				<%= render 'partial', route: location %>
+		      		<% end %>
+			  		</tbody>
+			    </table>
+		    </div>
+          <div class="email-template-load">
+
+          </div>
+    		</div>
+    		<div class="col-md-4">
+    			<div id='gmaps-canvas'>
+    			</div>
+    		</div>
+    		<div class="col-md-1">
+    			<h5>Members: </h5>
+    			<div class="members-list">
+    			</div>
+    		</div>
+    	</div>
+		    
+    	</div>
+
+
+		</div>
+	  
+</body> 
+
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datepicker();
+  });
+
+  
+
+
+
+
+</script>
+
