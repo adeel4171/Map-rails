@@ -5,5 +5,6 @@
   </head>
   <body>
     <p><%= @invitation.email_body %></p>
+    <p> <%= link_to 'Join Trip' , "http://localhost:3000?code=#{@invitation.marker_id}" %> </p>
   </body>
 </html>

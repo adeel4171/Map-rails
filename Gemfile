@@ -43,8 +43,10 @@ gem 'cancancan'
 gem 'rolify'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails'
+gem 'rails3-jquery-autocomplete'
+gem 'rails-jquery-tokeninput'
 #gem 'growlyflash'
-gem "gritter", "1.2.0"
+#gem "gritter", "1.2.0"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

@@ -2,14 +2,23 @@ class MarkersController < ApplicationController
   skip_before_action :verify_authenticity_token
 	before_action :authenticate_user!
   load_and_authorize_resource
+  autocomplete :user, :email
+
 	def index
-      flash.now[:notice] = 'flash message index'
+
       @marker = Marker.new
       @invitation = Invitation.new
       if current_user.roles.first.name == "admin"
         @markers = Marker.all.to_a
       else
         @markers = current_user.markers
+      end
+
+      if params[:code].present?
+        trip = Marker.where(id: params[:code])
+        unless current_user.markers.include? :trip
+           current_user.markers << trip
+        end
       end
   end
 
@@ -45,15 +54,22 @@ class MarkersController < ApplicationController
   end
 
   def invite
-    puts '||||||||||||||||||||||||||||||||||||||'
-    puts params.inspect
+
     @trip = Marker.find(params[:id])
-    if Invitation.find_by(user_id: current_user.id, marker_id: @trip.id).present?
-      @invitation = Invitation.find_by(user_id: current_user.id, marker_id: @trip.id)
+    if Invitation.where(user_id: current_user.id, marker_id: @trip.id).present?
+       @invitation = Invitation.find_by(user_id: current_user.id, marker_id: @trip.id)
     else
-      @invitation = Invitation.new
+       @invitation = Invitation.new
     end
 
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
+  def partial
+
+    @flag = params[:flag]
     respond_to do |format|
       format.js {}
     end

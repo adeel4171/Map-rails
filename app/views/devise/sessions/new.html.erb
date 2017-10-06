@@ -39,7 +39,7 @@
 
           <h1>Sign in</h1>
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name, code: @invitation_code)) do |f| %>
               <div class="field">
                 <%= f.label :email, class:'text-field-label' %><br />
                 <%= f.email_field :email, class:'text-field-design', autofocus: true %>

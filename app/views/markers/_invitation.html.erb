@@ -1,12 +1,15 @@
 <div>
-  <h3> Invitation Send</h3>
+  <h3> Sending Invitation</h3>
   <%= form_for(invitation, remote: true) do |f| %>
       <div class="row">
         <div class="col-md-2">
           To:
         </div>
         <div class="col-md-10">
-          <%= f.text_field :send_to, class: 'text-field-design' %>
+          <%#= f.text_field :send_to, class: 'text-field-design', value: '' %>
+          <%#= f.autocomplete_field :send_to,  autocomplete_user_email_markers_path, value: [], 'data-delimiter' => ',', :multiple => true %>
+          <%= f.label :tags %><br />
+          <%= f.text_field :tags %>
         </div>
       </div>
       <div class="row">
@@ -14,7 +17,7 @@
           Body:
         </div>
         <div class="col-md-10">
-          <%= f.text_area :email_body, class:"text-area-design" %>
+          <%= f.text_area :email_body, class:"text-area-design", value: 'I am inviting you to join the trip. You can join it by clicking on the link below' %>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :marker_id,value: trip.id %>
         </div>
