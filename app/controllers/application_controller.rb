@@ -13,10 +13,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-  	#template_index_path
-    puts '****************** Devise **********************'
-    puts params.inspect
-  	tracks_path(code: params[:code])
+  
+  	tracks_path
   end
 
   # def after_sign_up_path_for(resource)

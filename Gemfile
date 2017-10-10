@@ -45,6 +45,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails'
 gem 'rails3-jquery-autocomplete'
 gem 'rails-jquery-tokeninput'
+gem 'ransack'
 #gem 'growlyflash'
 #gem "gritter", "1.2.0"
 

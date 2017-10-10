@@ -13,9 +13,17 @@ class MarkersController < ApplicationController
       else
         @markers = current_user.markers
       end
+      # @q = Marker.ransack(params[:q])
+      # @markers = @q.result
 
-      if params[:code].present?
-        trip = Marker.where(id: params[:code])
+      # if current_user.roles.first.name != "admin"
+      #   @markers = @markers.where(user_ids: current_user.id).to_a
+      # else
+      #   @markers = @markers.to_a
+      # end
+
+      if session[:code].present?
+        trip = Marker.where(id: session[:code])
         unless current_user.markers.include? :trip
            current_user.markers << trip
         end

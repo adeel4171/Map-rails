@@ -6,11 +6,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def new
 
      @invitation_code = params[:code]
+     puts '********* Session New Reg *******************'
+     puts session[:code]
      super
    end
 
    def create
      @invitation_code = params[:code]
+     puts '********* Session New Create *******************'
+     puts session[:code]
      super
      if current_user.present?
        current_user.roles << Role.last

@@ -26,7 +26,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Sign up", new_user_registration_path %></li>
-      <li><%= link_to "Sign in", new_user_session_path%></li>
+            <li><%= link_to "Sign in", new_user_session_path%></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -38,11 +38,10 @@
         <div class="col-lg-6">
 
           <h1>Sign in</h1>
-
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name, code: @invitation_code)) do |f| %>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="field">
                 <%= f.label :email, class:'text-field-label' %><br />
-                <%= f.email_field :email, class:'text-field-design', autofocus: true %>
+                <%= f.email_field :email, class:'text-field-design email-field-designing', autofocus: true %>
               </div>
 
               <div class="field">
@@ -58,7 +57,7 @@
               <% end %>
 
               <div class="actions">
-                <%= f.submit "Log in" %>
+                <%= f.submit "Log in" , class: 'btn btn-success btn-lg' %>
               </div>
             <% end %>
              <div style='width: 50px;'>

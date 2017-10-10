@@ -1,7 +1,10 @@
 class TemplateController < ApplicationController
   def index
     if params[:code].present?
-      @invitation_code = params[:code ]
+      session[:code] = params[:code]
+      if current_user.present?
+        redirect_to markers_path
+      end
     end
   end
 end

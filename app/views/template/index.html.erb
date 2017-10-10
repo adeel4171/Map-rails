@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Siimple - Free Bootstrap 3 Landing Page</title>
+
   </head>
 
   <body>
@@ -23,13 +24,14 @@
           </button>
           <a class="navbar-brand" href="index.html">Simple</a>
         </div>
+
         <div class="navbar-collapse collapse">
         	<% if user_signed_in? %>
         		<ul class="nav navbar-nav navbar-right">
 	            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       		<% else %>
 	          <ul class="nav navbar-nav navbar-right">
-              <% if @invitation_code.present? %>
+              <% if session[:code].present? %>
                   <li><%= link_to "Sign up", new_user_registration_path(code:@invitation_code) %></li>
                   <li><%= link_to "Sign in", new_user_session_path(code: @invitation_code) %></li>
               <% else %>
@@ -49,6 +51,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<h1>Simple landing page</h1>
+					<%= session[:code] %>
 					<h2 class="subtitle">No need huge slogan, we believe in less is better</h2>
 					<form class="form-inline signup" role="form">
 					  <div class="form-group">
