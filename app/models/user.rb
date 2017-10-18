@@ -38,6 +38,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  devise :omniauthable, :omniauth_providers => [:facebook]
+
 
   ## Database authenticatable
   # field :email,              type: String, default: ""
@@ -60,8 +62,8 @@ class User
 
   field :name,  type: String
   field :title,    type: String
-  #field :provider
-  #field :uid
+  field :provider
+  field :uid
   before_destroy :remove_user_id_from_all_trips
 
   ## Confirmable

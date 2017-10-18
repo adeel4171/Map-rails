@@ -34,9 +34,11 @@
               <% if session[:code].present? %>
                   <li><%= link_to "Sign up", new_user_registration_path(code:@invitation_code) %></li>
                   <li><%= link_to "Sign in", new_user_session_path(code: @invitation_code) %></li>
+
               <% else %>
                   <li><%= link_to "Sign up", new_user_registration_path %></li>
                   <li><%= link_to "Sign in", new_user_session_path %></li>
+                  <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
               <% end %>
 	            <!--li>< link_to "Sign up", new_user_registration_path %></li-->
 

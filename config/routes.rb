@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   #get 'template/index'
 
   resources :template, only: [:index]
-  devise_for :users, controllers: { sessions: 'users/sessions', :registrations => "users/registrations" }
+  devise_for :users, controllers: { sessions: 'users/sessions', :registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
   #devise_for :users
   resources :people
   root :to => 'template#index'
