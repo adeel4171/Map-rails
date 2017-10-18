@@ -17,7 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      puts session[:code]
      super
      if current_user.present?
-       current_user.roles << Role.last
+       current_user.add_role :user
        current_user.save!
      end
 

@@ -1,4 +1,5 @@
 $('.append-row').append('<%= escape_javascript(render partial: "partial", locals:{ route: @marker }) %>');
+$('.flash-message').text('<%= flash[:success] %>');
 
 
 

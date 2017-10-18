@@ -1,5 +1,5 @@
 <div>
-  <h3> Sending Invitation</h3>
+  <h3> Sending Invitation from <%= @start %> to <%= @end %>  </h3>
   <%= form_for(invitation, remote: true) do |f| %>
       <div class="row">
         <div class="col-md-2">
@@ -32,6 +32,7 @@
 <script type="text/javascript">
     $('.email-template-load').show();
   $("form").submit(function(e) {
+        $('.flash-message').text("Email has been Sent!")
         $('.email-template-load').hide();
     });
 

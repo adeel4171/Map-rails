@@ -1,2 +1,5 @@
+console.log('Flash Error');
+console.log('<%= flash[:notice] %>');
 var deleted_record = '<%=  @deleted_record.id %>';
 $('#' + deleted_record).remove();
+$('.flash-message').text('<%= flash[:notice] %>');

@@ -65,10 +65,12 @@ calcRoute = (from_latitude, from_longitude, to_latitude, to_longitude) ->
     return
   return
 
-@fetchLocations = (from_laitude, from_longitude, to_latitude, to_longitude, members_list) ->
+@fetchLocations = (from_laitude, from_longitude, to_latitude, to_longitude, active_members_list, pending_members_list) ->
   calcRoute from_laitude, from_longitude, to_latitude, to_longitude
-  $('.members-list').empty()
-  $('.members-list').append(members_list.join('\n'))
+  $('.active-members-list').empty()
+  $('.pending-members-list').empty()
+  $('.active-members-list').append(active_members_list.join('\n'))
+  #$('.pending-members-list').append(pending_members_list.join('\n'))
   return
 
 convertLocationToLatLong = (location) ->

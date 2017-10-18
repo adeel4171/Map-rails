@@ -15,15 +15,12 @@
 //= require jquery-ui
 //= require autocomplete-rails
 //= require rails-jquery-tokeninput
-
-//= require twitter/bootstrap     
 //= require bootstrap-sprockets
-
+//= require twitter/bootstrap
 //= require gmaps-auto-complete
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
 //= require moment
 //= require bootstrap-datepicker
-	
 //= require_tree .

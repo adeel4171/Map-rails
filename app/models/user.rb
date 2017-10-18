@@ -38,6 +38,7 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
   ## Database authenticatable
   # field :email,              type: String, default: ""
   # field :encrypted_password, type: String, default: ""
@@ -59,6 +60,10 @@ class User
 
   field :name,  type: String
   field :title,    type: String
+  #field :provider
+  #field :uid
+  before_destroy :remove_user_id_from_all_trips
+
   ## Confirmable
   # field :confirmation_token,   type: String
   # field :confirmed_at,         type: Time
@@ -70,9 +75,11 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
 
-  def has_role? (role_name)
-    puts ']]]]]]]]]]]]]]]]]]]]]]]]]]]]'
-    puts role_name
-  end
+  protected
+    def remove_user_id_from_all_trips
+      self.markers.each do |trip|
+        trip.user_ids.delete(self.id)
+      end
+    end
 
 end

@@ -38,6 +38,7 @@ gem  'byebug'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem "twitter-bootstrap-rails"
 gem 'cancancan'
 gem 'rolify'
@@ -46,8 +47,14 @@ gem 'bootstrap-timepicker-rails'
 gem 'rails3-jquery-autocomplete'
 gem 'rails-jquery-tokeninput'
 gem 'ransack'
+gem 'omniauth-facebook'
+
+
+
 #gem 'growlyflash'
+gem 'unobtrusive_flash', '>=3'
 #gem "gritter", "1.2.0"
+#gem 'jquery-timepicker-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

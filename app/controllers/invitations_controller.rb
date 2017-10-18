@@ -31,7 +31,7 @@ class InvitationsController < ApplicationController
       if @invitation.save!
         TripMailer.invite(@invitation).deliver_now
         format.html { redirect_to @invitation, notice: 'Invitation was successfully created.' }
-        format.js {}
+        format.js {flash[:notice] = "Invitation has been sent"}
         format.json {}
       else
 
@@ -50,7 +50,7 @@ class InvitationsController < ApplicationController
         TripMailer.invite(@invitation).deliver_now
         format.html { redirect_to @invitation, notice: 'Invitation was successfully updated.' }
         format.json { render :show, status: :ok, location: @invitation }
-        format.js {}
+        format.js {flash[:notice] = "Invitation has been sent"}
       else
         format.html { render :edit }
         format.json { render json: @invitation.errors, status: :unprocessable_entity }

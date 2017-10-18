@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
     collection do
       get 'partial'
+      get 'approve_member'
+      get 'reject_member'
     end
   end
   resources :tracks, controller: 'markers'
