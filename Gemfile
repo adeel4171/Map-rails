@@ -48,6 +48,7 @@ gem 'rails3-jquery-autocomplete'
 gem 'rails-jquery-tokeninput'
 gem 'ransack'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 
 

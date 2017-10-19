@@ -158,6 +158,7 @@ autocomplete_init = ->
 
   $('#gmaps-input-address-from, #gmaps-input-address-to').bind 'keydown', (event) ->
 
+    console.log('$$$$$$$$$$$$$$$$ KeyDown $$$$$$$$$$$$$$$$$$$')
     flag = 0
     if $(this).context.id == 'gmaps-input-address-to'
       flag = 1
@@ -170,7 +171,11 @@ autocomplete_init = ->
   return
 
 $(document).ready ->
+  console.log('***************** Inside Map Initializer ****************')
   if $('#gmaps-canvas').length
     gmaps_init()
-    autocomplete_init()
+    setTimeout (->
+      autocomplete_init()
+      return
+    ), 5000
   return

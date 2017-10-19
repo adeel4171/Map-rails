@@ -1,0 +1,75 @@
+<!--button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Open Modal</button-->
+
+<!-- Modal -->
+<!--div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">Modal Header</h4>
+</div>
+<div class="modal-body">
+  <p>Some text in the modal.</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div-->
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-2">
+      Starting From:
+    </div>
+    <div class="col-md-3">
+      <input id='gmaps-input-address-from' class='form-control' placeholder='Start typing a place name...' type='text' />
+    </div>
+    <div class="col-md-2">
+      Destination:
+    </div>
+    <div class="col-md-3">
+      <input id='gmaps-input-address-to' class='form-control' placeholder='Start typing a place name...' type='text' />
+    </div>
+  </div>
+
+  <%= form_for(@marker, remote: true) do |f| %>
+      <%= f.hidden_field :from_latitude, id:"location-latitude1" %>
+      <%= f.hidden_field :from_longitude, id:"location-longitude1" %>
+      <%= f.hidden_field :to_latitude, id:"location-latitude2" %>
+      <%= f.hidden_field :to_longitude, id:"location-longitude2" %>
+      <%= f.hidden_field :location_from, id:"location-from" %>
+      <%= f.hidden_field :location_to, id:"location-to" %>
+      <div class="row row-designing">
+        <div class="col-md-2">
+          Departure Date:
+        </div>
+        <div class="col-md-3">
+          <%= f.text_field :departure_date, id:"datetimepicker1" %>
+        </div>
+        <div class="col-md-2">
+          Begin At:
+        </div>
+        <div class="col-md-3">
+          <%= f.text_field :begin_at, class: 'timepicker1', :value => Time.now.strftime("%T")  %>
+        </div>
+      </div>
+      <div class="row row-designing">
+        <div class="col-md-2">
+          End At:
+        </div>
+        <div class="col-md-3">
+          <%= f.text_field :end_at, class: 'timepicker1', :value => Time.now.strftime("%T") %>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+          <%= f.submit 'Add Trip' , class: "btn btn-primary" %>
+        </div>
+      </div>
+  <% end %>
+  <!--input type="text", id="datetimepicker1" />
+  <button type="button", id="submit-modal" > Submit </button-->
+</div>
+
+<script type="text/javascript">
+  $(function () {
+  $('#datetimepicker1').datepicker({
+      format: 'YYYY-MM-DD'
+  });
+  });
+
+</script>

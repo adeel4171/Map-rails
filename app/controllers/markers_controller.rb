@@ -6,7 +6,7 @@ class MarkersController < ApplicationController
 
 	def index
 
-      @marker = Marker.new
+      #@marker = Marker.new
       @invitation = Invitation.new
       flash[:success] = ''
       if current_user.roles.first.name == "admin"
@@ -25,7 +25,6 @@ class MarkersController < ApplicationController
 
       if session[:code].present?
         trip = Marker.where(id: session[:code]).first
-        trip.join
         unless current_user.markers.include? :trip
            current_user.markers << trip
             unless trip.pending.include? current_user.id
@@ -37,11 +36,54 @@ class MarkersController < ApplicationController
       end
   end
 
+
+  def new
+
+    @marker = Marker.new
+    respond_to do |format|
+      format.js{}
+    end
+  end
+
   def show
 
     @users = Marker.users.where(id: current_user.id)
     respond_to do |format|
       format.js {}
+    end
+  end
+
+  def edit
+    @marker = Marker.find(params[:id])
+    puts 'Inside Edit'
+    puts @marker.inspect
+
+    respond_to do |format|
+      format.js{}
+    end
+  end
+
+  def update
+
+   @marker = Marker.find(params[:id])
+   puts '###############################3'
+   # puts params[:marker].inspect
+   # date1 = params[:marker][:departure_date].strftime("%F")
+   # puts date1
+   # puts '#######################'
+   # params[:marker][:departure_date] = date1
+   # puts params[:marker][:departure_date]
+   # puts '!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+
+
+
+    respond_to do |format|
+      if @marker.update_attributes!(marker_params)
+        format.js{flash[:success] = "Trip has been Updated!"}
+      else
+        puts @marker.errors.messages
+        render :edit
+      end
     end
   end
 
