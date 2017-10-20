@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :invitations do
   end
   resources :markers do
+    resources :pictures
     get :autocomplete_user_email, :on => :collection
     member do
       get 'invite'

@@ -40,6 +40,7 @@ class MarkersController < ApplicationController
   def new
 
     @marker = Marker.new
+    @marker.pictures.build
     respond_to do |format|
       format.js{}
     end
@@ -66,22 +67,11 @@ class MarkersController < ApplicationController
   def update
 
    @marker = Marker.find(params[:id])
-   puts '###############################3'
-   # puts params[:marker].inspect
-   # date1 = params[:marker][:departure_date].strftime("%F")
-   # puts date1
-   # puts '#######################'
-   # params[:marker][:departure_date] = date1
-   # puts params[:marker][:departure_date]
-   # puts '!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-
-
 
     respond_to do |format|
       if @marker.update_attributes!(marker_params)
         format.js{flash[:success] = "Trip has been Updated!"}
       else
-        puts @marker.errors.messages
         render :edit
       end
     end
@@ -163,7 +153,9 @@ class MarkersController < ApplicationController
 	private
 
 	def marker_params
-		params.require(:marker).permit(:from_latitude,:from_longitude,:to_latitude,:to_longitude,:location_from,:location_to,:user_ids, :departure_date, :begin_at, :end_at, :pending => [])
+		params.require(:marker).permit(:from_latitude,:from_longitude,:to_latitude,:to_longitude,:location_from,
+                                   :location_to,:user_ids, :departure_date, :begin_at, :end_at, :pending => [],
+                                   pictures_attributes: [:avatar,:_destroy, :id])
 	end
 
 end

@@ -1,7 +1,9 @@
 class Marker
   include Mongoid::Document
+  embeds_many :pictures, :cascade_callbacks => true
   has_and_belongs_to_many :users
   has_many :invitations
+  accepts_nested_attributes_for :pictures
   #field :name, type: String
   #field :locations
 

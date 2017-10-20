@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery.remotipart
 //= require autocomplete-rails
 //= require rails-jquery-tokeninput
 //= require bootstrap-sprockets
@@ -23,4 +24,7 @@
 //= require gmaps/google
 //= require moment
 //= require bootstrap-datepicker
+//= require jquery_nested_form
+//#= require bxslider
+//= require jquery.sliders
 //= require_tree .

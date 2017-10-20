@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <%= form_for(@marker, remote: true) do |f| %>
+  <%= nested_form_for(@marker, html: { multipart: true }, remote: true) do |f| %>
       <%= f.hidden_field :from_latitude, id:"location-latitude1" %>
       <%= f.hidden_field :from_longitude, id:"location-longitude1" %>
       <%= f.hidden_field :to_latitude, id:"location-latitude2" %>
@@ -40,7 +40,7 @@
           Departure Date:
         </div>
         <div class="col-md-3">
-          <%= f.text_field :departure_date, id:"datetimepicker1" %>
+          <%= f.text_field :departure_date, id:'datepicker', value: @marker.departure_date.present? ? @marker.departure_date.strftime('%d-%m-%Y') : ''  %>
         </div>
         <div class="col-md-2">
           Begin At:
@@ -56,6 +56,18 @@
         <div class="col-md-3">
           <%= f.text_field :end_at, class: 'timepicker1', :value => Time.now.strftime("%T") %>
         </div>
+        <div class="col-md-3">
+          <%= f.fields_for :pictures do |picture| %>
+              <%= picture.file_field :avatar, type: :file%>
+              <%= picture.link_to_remove "Remove this picture" %>
+          <% end %>
+          <p><%= f.link_to_add "Add a picture", :pictures %></p>
+        </div>
+
+
+
+
+
         <div class="col-md-3 col-md-offset-2">
           <%= f.submit 'Add Trip' , class: "btn btn-primary" %>
         </div>
@@ -67,8 +79,9 @@
 
 <script type="text/javascript">
   $(function () {
-  $('#datetimepicker1').datepicker({
-      format: 'YYYY-MM-DD'
+  $('#datepicker').datepicker({
+      dateFormat: 'dd-mm-yy'
+
   });
   });
 

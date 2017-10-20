@@ -49,9 +49,12 @@ gem 'rails-jquery-tokeninput'
 gem 'ransack'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem "mongoid-paperclip"
+gem 'remotipart', '~> 1.2'
+gem 'bxslider-rails'
+gem 'jquery-sliders-rails'
 
-
-
+gem "nested_form"
 #gem 'growlyflash'
 gem 'unobtrusive_flash', '>=3'
 #gem "gritter", "1.2.0"
