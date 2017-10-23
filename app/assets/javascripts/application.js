@@ -23,4 +23,6 @@
 //= require gmaps/google
 //= require moment
 //= require bootstrap-datepicker
+//= require jquery.timepicker.js
+//= require growlyflash
 //= require_tree .

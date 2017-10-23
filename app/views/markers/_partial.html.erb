@@ -5,7 +5,7 @@
     <a href='#', onclick="event.preventDefault(); return false;",  class="load-location link-designing" data-location_from_latitude="<%= route[:from_latitude] %>" data-location_from_longitude="<%= route[:from_longitude] %>" data-location_to_latitude="<%= route[:to_latitude] %>" data-location_to_longitude="<%= route[:to_longitude]%>" data-pending-members="<%= User.find(route.pending).pluck(:email) %>" data-active-members="<%= User.find(route.active).pluck(:email) %>" data-trip="<%= route.id %>" data-role="<%= current_user.roles.first.name %>" >
 		  <i class="glyphicon glyphicon-asterisk"></i>
 	  </a>
-    <%= link_to edit_marker_path(route), data: {target: '#myModal',toggle: 'modal'},remote: :true do %>
+    <%= link_to edit_marker_path(route), data: {target: '#myModal',toggle: 'modal'}, class: 'link-designing', remote: :true do %>
         <i class="glyphicon glyphicon-edit"></i>
     <% end %>
 

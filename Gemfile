@@ -50,12 +50,10 @@ gem 'ransack'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-
-
-#gem 'growlyflash'
-gem 'unobtrusive_flash', '>=3'
+gem 'growlyflash'
+#gem 'unobtrusive_flash', '>=3'
 #gem "gritter", "1.2.0"
-#gem 'jquery-timepicker-rails'
+gem 'jquery-timepicker-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

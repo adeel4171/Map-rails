@@ -8,7 +8,6 @@ class MarkersController < ApplicationController
 
       #@marker = Marker.new
       @invitation = Invitation.new
-      flash[:success] = ''
       if current_user.roles.first.name == "admin"
         @markers = Marker.all.to_a
       else
@@ -118,7 +117,7 @@ class MarkersController < ApplicationController
     respond_to do |format|
       if @marker.save
         format.html {redirect_to tracks_path}
-        format.js {flash[:success] = "Trip has been Created!"}
+        format.js {flash[:notice] = "Trip has been Created!"}
       else
         render :new
       end
