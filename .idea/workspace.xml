@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b30e0d8-1984-45b4-b073-bc89e911be5b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/assignment1.iml" afterPath="$PROJECT_DIR$/.idea/assignment1.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/listen.coffee.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/listen.coffee.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/markers.coffee.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/markers.coffee.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.sass" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/markers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/markers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/marker.rb" afterPath="$PROJECT_DIR$/app/models/marker.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/markers/_modal.html.erb" afterPath="$PROJECT_DIR$/app/views/markers/_modal.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/markers/_partial.html.erb" afterPath="$PROJECT_DIR$/app/views/markers/_partial.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/markers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/markers/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -35,21 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="picture.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/picture.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/markers/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="88" column="49" lean-forward="false" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+            <state relative-caret-position="918">
+              <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -60,7 +33,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-              <folding />
+              <folding>
+                <marker date="1508503046182" expanded="true" signature="1133:1226" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,8 +43,8 @@
       <file leaf-file-name="assets.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="108">
+              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -78,8 +53,8 @@
       <file leaf-file-name="_partial.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/markers/_partial.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="8" column="275" lean-forward="false" selection-start-line="8" selection-start-column="275" selection-end-line="8" selection-end-column="275" />
+            <state relative-caret-position="162">
+              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -88,9 +63,11 @@
       <file leaf-file-name="listen.coffee.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/listen.coffee.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="486">
+              <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+              <folding>
+                <marker date="1508503046086" expanded="true" signature="47:234" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,18 +75,18 @@
       <file leaf-file-name="markers.coffee.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/markers.coffee.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="3096">
               <caret line="172" column="20" lean-forward="false" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="378">
+              <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -118,8 +95,8 @@
       <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="522">
+              <caret line="29" column="3" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -130,7 +107,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
               <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding />
+              <folding>
+                <marker date="1508503046086" expanded="true" signature="0:761" ph="/*...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -254,6 +233,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,9 +268,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,14 +420,15 @@
       <workItem from="1508302409700" duration="31390000" />
       <workItem from="1508393254917" duration="29475000" />
       <workItem from="1508470874368" duration="23844000" />
+      <workItem from="1508737266036" duration="200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202712000" />
+    <option name="totallyTimeSpent" value="202919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1535" height="904" extended-state="6" />
+    <frame x="64" y="-11" width="1537" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23452769" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -456,19 +436,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.057901084" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -565,7 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="90" column="41" lean-forward="false" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -580,7 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2106">
           <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -588,7 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="299" column="2" lean-forward="true" selection-start-line="299" selection-start-column="2" selection-end-line="299" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="51" lean-forward="false" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="86" lean-forward="false" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="157" column="65" lean-forward="false" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,13 +741,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/markers.coffee.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
+        <state relative-caret-position="3096">
           <caret line="172" column="20" lean-forward="false" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
           <folding />
         </state>
@@ -792,16 +754,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="378">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        <state relative-caret-position="522">
+          <caret line="29" column="3" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -810,14 +772,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding />
+          <folding>
+            <marker date="1508503046086" expanded="true" signature="0:761" ph="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="108">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -826,30 +790,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
+          <folding>
+            <marker date="1508503046182" expanded="true" signature="1133:1226" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/listen.coffee.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="486">
+          <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding>
+            <marker date="1508503046086" expanded="true" signature="47:234" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/markers/_partial.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="8" column="275" lean-forward="false" selection-start-line="8" selection-start-column="275" selection-end-line="8" selection-end-column="275" />
+        <state relative-caret-position="162">
+          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/markers/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="88" column="49" lean-forward="false" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+        <state relative-caret-position="918">
+          <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding />
         </state>
       </provider>
