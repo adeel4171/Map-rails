@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Siimple - Free Bootstrap 3 Landing Page</title>
+
   </head>
 
   <body>
@@ -21,19 +22,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Siimple</a>
+          <a class="navbar-brand" href="index.html">Simple</a>
         </div>
+
         <div class="navbar-collapse collapse">
         	<% if user_signed_in? %>
         		<ul class="nav navbar-nav navbar-right">
 	            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       		<% else %>
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><%= link_to "Sign up", new_user_registration_path %></li>
-							<li><%= link_to "Sign in", new_user_session_path%></li>
+              <% if session[:code].present? %>
+                  <li><%= link_to "Sign up", new_user_registration_path(code:@invitation_code) %></li>
+                  <li><%= link_to "Sign in", new_user_session_path(code: @invitation_code) %></li>
+                  <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+
+              <% else %>
+                  <li><%= link_to "Sign up", new_user_registration_path %></li>
+                  <li><%= link_to "Sign in", new_user_session_path %></li>
+                  <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+                  <li><%= link_to "Sign in with google", user_google_oauth2_omniauth_authorize_path %></li>
+              <% end %>
+	            <!--li>< link_to "Sign up", new_user_registration_path %></li-->
+
 	          </ul>
           <% end %>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
 
@@ -42,6 +55,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<h1>Simple landing page</h1>
+					<%= session[:code] %>
 					<h2 class="subtitle">No need huge slogan, we believe in less is better</h2>
 					<form class="form-inline signup" role="form">
 					  <div class="form-group">
@@ -86,8 +100,8 @@
 			</div>
             <div class="col-md-6">
                 <div class="credits">
-                    <!-- 
-                        All the links in the footer should remain intact. 
+                    <!--
+                        All the links in the footer should remain intact.
                         You can delete the links only if you purchased the pro version.
                         Licensing information: https://bootstrapmade.com/license/
                         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Siimple

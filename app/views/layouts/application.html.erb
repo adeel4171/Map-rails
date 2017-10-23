@@ -4,14 +4,18 @@
     <title>Assignment1</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <!--script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script-->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDAwt4vffiK3wZdBKG9ASjuxWOm1aTzEFE&libraries=geometry"></script>
+
     <!--script async defer src="https://maps.googleapis.com/maps/api/js?key='AIzaSyDAwt4vffiK3wZdBKG9ASjuxWOm1aTzEFE'&callback=initMap"
     type="text/javascript"></script-->
 
     <!--%= javascript_include_tag "application" %-->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--%= javascript_include_tag :defaults %-->
+    <%= javascript_include_tag 'application'%>
+    <%= javascript_include_tag 'autocomplete-rails.js' %>
+    <%= stylesheet_link_tag 'application', media: 'all'%>
   </head>
 
   <body>
@@ -24,7 +28,7 @@
 		< end >
 	</div -->
     <%= yield %>
-    <%#= js add_gritter(flash[:notice], title: "DailySmarty Notification", sticky: false) %>
+    <%# js add_gritter(flash[:notice], title: "DailySmarty Notification", sticky: false) %>
   </body>
 </html>
 

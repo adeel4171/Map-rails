@@ -27,20 +27,14 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.new(invitation_params)
     @invitation.status = "pending"
 
-    TripMailer.invite(@invitation).deliver_now
-    puts '[[[[[[[[[[[[[[[[[[[[[[[['
-    puts @invitation.inspect
-
     respond_to do |format|
       if @invitation.save!
-        puts ']]]]]]]]]]]]]]]]]]]]]]'
-        puts @invitation.inspect
-
+        TripMailer.invite(@invitation).deliver_now
         format.html { redirect_to @invitation, notice: 'Invitation was successfully created.' }
-        format.js {}
+        format.js {flash[:notice] = "Invitation has been sent"}
         format.json {}
       else
-        puts '^^^^^^^^^^^ Error ^^^^^^^^^^^^^^^^^^^^^^^^'
+
         format.html { render :new }
         format.json { render json: @invitation.errors, status: :unprocessable_entity }
       end
@@ -50,11 +44,13 @@ class InvitationsController < ApplicationController
   # PATCH/PUT /invitations/1
   # PATCH/PUT /invitations/1.json
   def update
+
     respond_to do |format|
-      if @invitation.update(invitation_params)
+      if @invitation.update!(invitation_params)
         TripMailer.invite(@invitation).deliver_now
         format.html { redirect_to @invitation, notice: 'Invitation was successfully updated.' }
         format.json { render :show, status: :ok, location: @invitation }
+        format.js {flash[:notice] = "Invitation has been sent"}
       else
         format.html { render :edit }
         format.json { render json: @invitation.errors, status: :unprocessable_entity }
@@ -72,6 +68,9 @@ class InvitationsController < ApplicationController
     end
   end
 
+  def method
+    #method.js.erb
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_invitation
@@ -80,6 +79,6 @@ class InvitationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invitation_params
-      params.require(:invitation).permit(:send_to, :status, :email_body, :send_to_list, :user_id, :marker_id)
+      params.require(:invitation).permit(:status, :email_body, :user_id, :marker_id, :send_to_list => [], :send_to => [])
     end
 end

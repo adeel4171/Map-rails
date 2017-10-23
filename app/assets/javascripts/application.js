@@ -11,18 +11,20 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
 //= require jquery_ujs
-
-//= require twitter/bootstrap     
+//= require jquery-ui
+//= require jquery.remotipart
+//= require autocomplete-rails
+//= require rails-jquery-tokeninput
 //= require bootstrap-sprockets
-
+//= require twitter/bootstrap
 //= require gmaps-auto-complete
-// require turbolinks
+//= require turbolinks
 //= require underscore
 //= require gmaps/google
 //= require moment
-// require gritter
 //= require bootstrap-datepicker
-	
+//= require jquery_nested_form
+//#= require bxslider
+//= require jquery.sliders
 //= require_tree .

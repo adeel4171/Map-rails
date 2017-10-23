@@ -1,6 +1,29 @@
 $(document).on 'click', '.load-location', ->
-  fetchLocations $(this).data('location_from_latitude'), $(this).data('location_from_longitude'), $(this).data('location_to_latitude'), $(this).data('location_to_longitude'), $(this).data('members')
-  return
+  fetchLocations $(this).data('location_from_latitude'), $(this).data('location_from_longitude'), $(this).data('location_to_latitude'), $(this).data('location_to_longitude'), $(this).data('active-members'), $(this).data('pending-members')
+
+  pending = $(this).data('pending-members');
+  #images = $(this).data('images');
+  #console.log("Images", images);
+  console.log('Pending Members', pending);
+  trip1 = $(this).data('trip');
+  role = $(this).data('role');
+
+  $.each pending,(i,l) ->
+    console.log('pending', l);
+    $input1 = ('<input type="button" value= "✔" data-trip = '+trip1+' data-email = '+l+' data-id="member'+i+'" class="approve-pending-member" />');
+    $input2 = ('<input type="button" value= "☓" data-trip = '+trip1+' data-email = '+l+' data-id="member'+i+'" class="reject-pending-member" />');
+    if role == "admin"
+      $('.pending-members-list').append('<div class= "member'+i+'" ><span>'+l+'</span>'+$input1+' '+$input2+'</div>')
+    else
+      $('.pending-members-list').append(l).append("\n");
+    return
+
+#  $.each images,(index,url) ->
+#    $picture = ('<img src='+url+' >')
+#    $('.images').append($picture);
+#  return
+
+
 
 $(document).on 'click', '.email-template', ->
 	alert('hello');
@@ -12,3 +35,37 @@ $(document).on 'click', '#submit-modal', ->
 	alert($('#set-date').val());
 	$("#myModal .close").click();
 	return
+
+$(document).on 'click', '.approve-pending-member', ->
+  console.log('yes!!!');
+  user_email = $(this).data("email");
+  idd = $(this).data("id");
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3000/markers/approve_member",
+    data: { trip: { trip_id: $(this).data("trip"), email: $(this).data("email") } },
+    success:(data) ->
+      $('.' + idd).remove()
+      $('.active-members-list').append('\n').append(user_email)
+      return false
+    error:(data) ->
+      return false
+  })
+
+$(document).on 'click', '.reject-pending-member', ->
+  console.log('yes123!!!');
+  user_email = $(this).data("email");
+  idd = $(this).data("id");
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3000/markers/reject_member",
+    data: { trip: { trip_id: $(this).data("trip"), email: $(this).data("email") } },
+    success:(data) ->
+      $('.' + idd).remove()
+      return false
+    error:(data) ->
+      return false
+  })
+
+#console.log($(this).data("trip"));
+

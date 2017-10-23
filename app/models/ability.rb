@@ -10,7 +10,14 @@ class Ability
         if user.roles.first.name == "admin"
             can :manage, :all
         else
-            can :manage, :all
+            #can :manage, :all
+            can :manage, Marker
+            cannot :approve_member, Marker
+            cannot :reject_member, Marker
+            cannot :destroy, Marker
+
+            #can :approve_member, Marker
+
         end
     end
     # Define abilities for the passed in user here. For example:

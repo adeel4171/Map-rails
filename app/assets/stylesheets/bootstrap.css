@@ -294,7 +294,7 @@ a {
 a:hover,
 a:focus {
   color: #2a6496;
-  text-decoration: underline;
+  #text-decoration: underline;
 }
 a:focus {
   outline: thin dotted;
@@ -5186,10 +5186,12 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
+      width: 50%;
+      margin: 6%;
     /*width: 600px;
     margin: 30px auto;*/
-    width: 850px;
-    margin: 3%;
+    /*width: 850px;
+    margin: 3%;*/
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
