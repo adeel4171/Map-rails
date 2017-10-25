@@ -27,4 +27,6 @@
 //= require jquery_nested_form
 //#= require bxslider
 //= require jquery.sliders
+//= require jquery.timepicker.js
+//= require growlyflash
 //= require_tree .

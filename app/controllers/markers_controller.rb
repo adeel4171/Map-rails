@@ -7,8 +7,8 @@ class MarkersController < ApplicationController
 	def index
 
       #@marker = Marker.new
+
       @invitation = Invitation.new
-      flash[:success] = ''
       if current_user.roles.first.name == "admin"
         @markers = Marker.all.to_a
       else
@@ -66,11 +66,15 @@ class MarkersController < ApplicationController
 
   def update
 
+    puts 'Inside Update!'
+    puts '****************'
+
    @marker = Marker.find(params[:id])
 
     respond_to do |format|
       if @marker.update_attributes!(marker_params)
-        format.js{flash[:success] = "Trip has been Updated!"}
+        puts '****************HERE*****************'
+        format.js{flash[:notice] = "Trip has been Updated!"}
       else
         render :edit
       end
@@ -106,10 +110,12 @@ class MarkersController < ApplicationController
     @marker = Marker.new(marker_params)
     @marker.user_ids << current_user.id
     respond_to do |format|
-      if @marker.save
+      if @marker.save!
         format.html {redirect_to tracks_path}
-        format.js {flash[:success] = "Trip has been Created!"}
+        format.js{flash[:notice] = "Trip has been Created!"}
       else
+        puts '********************Errors******************'
+        puts @marker.error.full_messages
         render :new
       end
     end
@@ -154,7 +160,7 @@ class MarkersController < ApplicationController
 
 	def marker_params
 		params.require(:marker).permit(:from_latitude,:from_longitude,:to_latitude,:to_longitude,:location_from,
-                                   :location_to,:user_ids, :departure_date, :begin_at, :end_at, :pending => [],
+                                   :location_to,:user_ids, :departure_date, :begin_at, :end_at, :video, :pdf, :pending => [],
                                    pictures_attributes: [:avatar,:_destroy, :id])
 	end
 

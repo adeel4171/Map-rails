@@ -48,6 +48,9 @@
         <div class="col-md-3">
           <%= f.text_field :begin_at, class: 'timepicker1', :value => Time.now.strftime("%T")  %>
         </div>
+        <div class="col-md-2">
+          <%= f.file_field :video %>
+        </div>
       </div>
       <div class="row row-designing">
         <div class="col-md-2">
@@ -64,9 +67,9 @@
           <p><%= f.link_to_add "Add a picture", :pictures %></p>
         </div>
 
-
-
-
+        <div class="col-md-2">
+          <%= f.file_field :pdf %>
+        </div>
 
         <div class="col-md-3 col-md-offset-2">
           <%= f.submit 'Add Trip' , class: "btn btn-primary" %>
@@ -83,6 +86,8 @@
       dateFormat: 'dd-mm-yy'
 
   });
+  $('.timepicker1').timepicker({ 'scrollDefaultNow': true });
+  
   });
 
 </script>

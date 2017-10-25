@@ -57,8 +57,15 @@ gem 'jquery-sliders-rails'
 gem "nested_form"
 #gem 'growlyflash'
 gem 'unobtrusive_flash', '>=3'
+
+gem 'growlyflash'
+#gem 'unobtrusive_flash', '>=3'
 #gem "gritter", "1.2.0"
-#gem 'jquery-timepicker-rails'
+gem 'jquery-timepicker-rails'
+#gem "paperclip-ffmpeg", "~> 1.2.0"
+gem 'jwplayer-rails', :git => 'git://github.com/dutgriff/jwplayer-rails.git'
+gem 'paperclip-av-transcoder'
+#gem 'videojs_rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

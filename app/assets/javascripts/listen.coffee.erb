@@ -2,11 +2,19 @@ $(document).on 'click', '.load-location', ->
   fetchLocations $(this).data('location_from_latitude'), $(this).data('location_from_longitude'), $(this).data('location_to_latitude'), $(this).data('location_to_longitude'), $(this).data('active-members'), $(this).data('pending-members')
 
   pending = $(this).data('pending-members');
-  #images = $(this).data('images');
-  #console.log("Images", images);
+  images = $(this).data('images');
+  console.log("Images", images);
   console.log('Pending Members', pending);
   trip1 = $(this).data('trip');
   role = $(this).data('role');
+  console.log('********** IMAGES *****************');
+  console.log(images);
+  $('.images').empty();
+
+  $.each images,(index,url) ->
+	   $picture = ('<img src='+url+' >')
+	   $('.images').append($picture);
+  return
 
   $.each pending,(i,l) ->
     console.log('pending', l);
@@ -17,11 +25,12 @@ $(document).on 'click', '.load-location', ->
     else
       $('.pending-members-list').append(l).append("\n");
     return
+  return
 
-#  $.each images,(index,url) ->
-#    $picture = ('<img src='+url+' >')
-#    $('.images').append($picture);
-#  return
+	# $.each images,(index,url) ->
+	#    $picture = ('<img src='+url+' >')
+	#    $('.images').append($picture);
+ #  return
 
 
 

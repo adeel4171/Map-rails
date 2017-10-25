@@ -9,6 +9,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
     else
+      puts '********************Facebook Errors*************************'
+      puts @user.errors.full_messages
+      flash[:notice] = @user.errors
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
@@ -24,8 +27,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # session["devise.google_data"] = oauth_response.except(:extra)
       # params[:error] = :account_not_found
       # do_failure_things
+      puts '********************Facebook Errors*************************'
+      puts user.errors.full_messages
       session['devise.google_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow some session stores
-      redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
+      redirect_to new_user_registration_url, alert: user.errors.full_messages.join("\n")
     end
   end
 

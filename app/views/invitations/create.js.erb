@@ -1,1 +1,2 @@
-$('.flash-message').text('<%= flash[:success] %>');
+//$('.flash-message').text('<%= flash[:success] %>');
+$('.flash-message').html("<div class='alert alert-success %> alert-dismissible' role='alert'><button class='close' data-dismiss='alert'>×</button><%= flash[:notice] %></div>");

@@ -66,6 +66,7 @@ class User
   field :title,    type: String
   field :provider
   field :uid
+  validates :name, presence: true
   before_destroy :remove_user_id_from_all_trips
 
   ## Confirmable

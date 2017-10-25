@@ -10,8 +10,23 @@
 
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        Join Trip
+      </div>
+      <!--a class="navbar-brand" href="#">WebSiteName</a-->
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><div class="navbar-brand"><%= current_user.name.titleize %></div> </li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  </div>
+</nav>
 
-<div class="container">
+
+<div class="container container-designing">
   <div class="flash-message">
   </div>
   <!--div class="image-display"-->
@@ -61,8 +76,6 @@
   </div>
 
 
-
-
   <!--%= link_to 'Load Partial', partial_markers_path(flag: 'date-to'), {:remote => true,"data-toggle": "modal", "data-target": "#myModal"} %-->
 
   <div class="row">
@@ -86,7 +99,13 @@
         </thead>
         <tbody class="append-row">
         <%- @markers.each do |location| %>
-            <%= render 'partial', route: location %>
+            <% array = [] %>
+            <% location.pictures.each do |picture| %>
+              <% array << picture.avatar.url %> 
+            <% end %>
+            <% puts '@@@@@@@@@@@@@@@@@@@@@@@@@@@2'%>
+            <% puts array %>
+            <%= render 'partial', route: location, picture_urls: array %>
         <% end %>
         </tbody>
       </table>
@@ -116,6 +135,20 @@
     <div class="col-md-3">
       <div id='gmaps-canvas'>
       </div>
+    </div>
+    <div class="row">
+      <%#= jwplayer_assets %>
+      <%#= jwplayer({file: Marker.last.video.url(:medium)}) %>
+      <!-- <iframe src=<%#= Marker.last.pdf.url %> width="600" height="780" style="border: none;"> </iframe> -->
+
+      <!-- <a href="https://docs.google.com/gview?url=#{url}&embedded=true">Your Pdf Viewer</a>  -->
+      <%= video_tag Marker.last.video.url(:medium) %>
+      <%= link_to 'View Pdf', Marker.last.pdf.url, target: :_blank %>
+      <!-- <div id='myElement'>Loading the player ...</div> -->
+      <!-- <div class="video"> -->
+        <%#= video_tag(Marker.last.video.url,  :size => "320x240", :controls => true, :autobuffer => true) %>
+        <%#= videojs_rails sources: { mp4: Marker.last.video.url, webm: Marker.last.video.url}, setup: "{}", :size => "320x240", :controls => true, :autobuffer => true %>
+      <!-- </div> -->
     </div>
 
   </div>
